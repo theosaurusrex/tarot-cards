@@ -42,7 +42,7 @@
     <div class="scene scene--card2">
       <div class="card2">
         <div class="card2__face card2__face--front">front2</div>
-        <div class="card2__face card2__face--back"></div>
+        <div id="tarotImage2" class="card2__face card2__face--back"></div>
       </div>
       <p>Second card</p>
     </div>
@@ -50,7 +50,7 @@
     <div class="scene scene--card3">
       <div class="card3">
         <div class="card3__face card3__face--front">front3</div>
-        <div class="card3__face card3__face--back"></div>
+        <div id="tarotImage3" class="card3__face card3__face--back"></div>
       </div>
       <div class="card-description">
         <p>third card</p>
@@ -75,9 +75,16 @@ var tarotImages = [
   "wizard"
 ];
 
-var tarotImage = tarotImages[Math.floor(Math.random()*tarotImages.length)];
+function shuffle(o) {
+    for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
 
-document.getElementById("tarotImage1").style.backgroundImage = "url(images/card-faces/" + tarotImage +".png)";
+var random = shuffle(tarotImages);
+
+for (i=0; i<3; i++) {
+  document.getElementById("tarotImage"+(i+1)).style.backgroundImage = "url(images/card-faces/" + random[i] +".png)";  
+};
 </script>
 
 
