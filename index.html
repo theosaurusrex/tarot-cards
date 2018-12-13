@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- <div class="Dynamic-Tarot-Card">
+    <h1 class="Dynamic-Tarot-Card">Dynamic Tarot Card</h1>
+    
+    <p id="demo"></p>
+
+    <script>
+    var tarotCard = "";
+    var i;
+    for (i = 0; i < 3; i++) {
+      tarotCard += "The number is " + i + "<br>";
+    }
+    document.getElementById("demo").innerHTML = tarotCard;
+    </script>
+  </div> -->
+  <div class="tarotImage2"></div>
+  <div class="container">
+    <div class="scene scene--card">
+      <div class="card">
+        <div class="card__face card__face--front">front</div>
+        <div id="tarotImage1" class=" card__face card__face--back"></div>  
+
+      </div>
+      <div class="card-text">
+        <div class="card-name">
+          <h3>Card Name</h3>
+        </div>            
+        <div class="card-desciption">
+          <p>Card description</p>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="scene scene--card2">
+      <div class="card2">
+        <div class="card2__face card2__face--front">front2</div>
+        <div class="card2__face card2__face--back"></div>
+      </div>
+      <p>Second card</p>
+    </div>
+    
+    <div class="scene scene--card3">
+      <div class="card3">
+        <div class="card3__face card3__face--front">front3</div>
+        <div class="card3__face card3__face--back"></div>
+      </div>
+      <div class="card-description">
+        <p>third card</p>
+      </div>
+    </div>
+    
+    </div>
+    </div>
+    </div>
+    <script src="js/cardflip.js"></script>
+  
+  <!-- ideas-resources: https://threejs.org/examples/css3d_periodictable.html -->
+  <p id="demo"></p>
+  <script>
+var tarotImages = [
+  "empress",
+  "fool",
+  "emperor",
+  "devil",
+  "priestess",
+  "pope",
+  "wizard"
+];
+
+var tarotImage = tarotImages[Math.floor(Math.random()*tarotImages.length)];
+
+document.getElementById("tarotImage1").style.backgroundImage = "url(images/card-faces/" + tarotImage +".png)";
+</script>
+
+
+  </body>
+
+</html>
