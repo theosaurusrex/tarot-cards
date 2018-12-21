@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Use the XMLHttpRequest to get the content of a file.</h2>
+<p>The content is written in JSON format, and can easily be converted into a JavaScript object.</p>
+
+<p id="demo"></p>
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var cards = JSON.parse(this.responseText);
+    document.getElementById("demo").innerHTML = cards[0];
+  }
+};
+xmlhttp.open("GET", "/js/cards.json", true);
+xmlhttp.send();
+
+function makeTableHTML(cards) {
+    var result = "<table border=1>";
+    for(var i=0; i<cards.length; i++) {
+        result += "<tr>";
+        for(var j=0; j<cards[i].length; j++){
+            result += "<td>"+cards[i][j]+"</td>";
+        }
+        result += "</tr>";
+    }
+    result += "</table>";
+
+    return result;
+}
+</script>
+
+<p>Take a look at <a href="/js/cards.json" target="_blank">cards.json</a></p>
+
+</body>
+</html>

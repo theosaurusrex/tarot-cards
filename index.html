@@ -1,92 +1,122 @@
 <!DOCTYPE html>
 <html>
+
+<!--Knockout-->
 <head>
-<title>Title of the document</title>
+<title>Three Tarot Cards in javascript</title>
 <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-  <!-- <div class="Dynamic-Tarot-Card">
-    <h1 class="Dynamic-Tarot-Card">Dynamic Tarot Card</h1>
-    
-    <p id="demo"></p>
+    <nav>
+        <h1 id="title">Three Random Tarot Cards</h1>
+        <div>
+          <button id="drawThree" onclick="drawThree()"><h3>Draw three new cards</h3></button>
+          <!-- <button id="shuffle-button" onclick="shuffleDeck()"><h3>Shuffle the Deck</h3></button> -->
+        </div>
+      </nav>
 
-    <script>
-    var tarotCard = "";
-    var i;
-    for (i = 0; i < 3; i++) {
-      tarotCard += "The number is " + i + "<br>";
-    }
-    document.getElementById("demo").innerHTML = tarotCard;
-    </script>
-  </div> -->
-  <div class="tarotImage2"></div>
   <div class="container">
+    
     <div class="scene scene--card">
-      <div class="card">
-        <div class="card__face card__face--front">front</div>
-        <div id="tarotImage1" class=" card__face card__face--back"></div>  
-
+        <div id="Past" class="card-heading"><h2>Past</h2></div>
+      <div id="firstCardFlip" class="card" onclick="firstImageNameShow()">
+        <div class="card__face card__face--front"></div>
+        <div id="tarotImage1" class=" card__face card__face--back"></div>
       </div>
       <div class="card-text">
         <div class="card-name">
-          <h3>Card Name</h3>
-        </div>            
-        <div class="card-desciption">
-          <p>Card description</p>
+            <h3 id="tarotName1"></h3>
         </div>
+        <!-- <div class="card-desciption">
+          <p>Card description</p>
+        </div> -->
       </div>
+      
     </div>
     
     
     <div class="scene scene--card2">
-      <div class="card2">
-        <div class="card2__face card2__face--front">front2</div>
+        <div id="Present" class="card-heading"><h2>Present</h2></div>
+      <div id="secondCardFlip" class="card2" onclick="secondImageNameShow()">
+        <div class="card2__face card2__face--front"></div>
         <div id="tarotImage2" class="card2__face card2__face--back"></div>
       </div>
-      <p>Second card</p>
+
+      <div class="card-text">
+          <div class="card-name">
+              <h3 id="tarotName2"></h3>
+          </div>
+          <!-- <div class="card-desciption">
+            <p>Card description</p>
+          </div> -->
+        </div>
     </div>
     
     <div class="scene scene--card3">
-      <div class="card3">
-        <div class="card3__face card3__face--front">front3</div>
+      <div id="future" class="card-heading"><h2>Future</h2></div>
+      <div id="thirdCardFlip" class="card3" onclick="thirdImageNameShow()">
+        <div class="card3__face card3__face--front"></div>
         <div id="tarotImage3" class="card3__face card3__face--back"></div>
       </div>
-      <div class="card-description">
-        <p>third card</p>
-      </div>
+      <div class="card-text">
+          <div class="card-name">
+              <h3 id="tarotName3"></h3>
+          </div>
+
+          <!-- <div class="card-desciption">
+            <p>Card description</p>
+          </div> -->
+        </div>
     </div>
     
     </div>
     </div>
     </div>
+
+    <!-- <div id="preload">
+        <img src="images/card-faces/Ace_of_Pentacles.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Empress.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Fool.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Emperor.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Death_Card.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Devil.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Priestess.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Priest.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Wizard.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Ace_of_Pentacles.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Two_of_Pentacles.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Three_of_Pentacles.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Four_of_Pentacles.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Five_of_Pentacles.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Six_of_Pentacles.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Seven_of_Pentacles.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Eight_of_Pentacles.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Nine_of_Pentacles.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Ten_of_Pentacles.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Page_of_Pentacles.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Knight_of_Pentacles.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Queen_of_Pentacles.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/King_of_Pentacles.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Ace_of_Swords.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Ace_of_Swords.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Two_of_Swords.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Three_of_Swords.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Four_of_Swords.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Five_of_Swords.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Six_of_Swords.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Seven_of_Swords.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Eight_of_Swords.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Nine_of_Swords.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Ten_of_Swords.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Page_of_Swords.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Knight_of_Swords.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/Queen_of_Swords.jpg" width="1" height="1" alt="ace of penticles preload" />
+        <img src="images/card-faces/King_of_Swords.jpg" width="1" height="1" alt="ace of penticles preload" />
+      </div>
+       -->
     <script src="js/cardflip.js"></script>
-  
-  <!-- ideas-resources: https://threejs.org/examples/css3d_periodictable.html -->
-  <p id="demo"></p>
-  <script>
-var tarotImages = [
-  "empress",
-  "fool",
-  "emperor",
-  "devil",
-  "priestess",
-  "pope",
-  "wizard"
-];
-
-function shuffle(o) {
-    for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-    return o;
-};
-
-var random = shuffle(tarotImages);
-
-for (i=0; i<3; i++) {
-  document.getElementById("tarotImage"+(i+1)).style.backgroundImage = "url(images/card-faces/" + random[i] +".png)";  
-};
-</script>
-
+    <script src="js/shuffledeal.js"></script>
 
   </body>
 

@@ -12,4 +12,5 @@ var card3 = document.querySelector('.card3');
 card3.addEventListener( 'click', function() {
   card3.classList.toggle('is-flipped');
 });
-//randomly select tarot image
+//if all card_.classlist is-flipped equals true, enabledraw three button
+//if (card3)
