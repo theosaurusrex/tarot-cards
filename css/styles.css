@@ -170,7 +170,7 @@ body { font-family: sans-serif; }
 }
 
 .card2__face--back {
-    background-image: url("../images/card-faces/Tarot-card-illustrations_06.png");
+    /* background-image: url("../images/card-faces/Tarot-card-illustrations_06.png"); */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
@@ -220,7 +220,7 @@ body { font-family: sans-serif; }
 }
 
 .card3__face--back {
-    background-image: url("../images/card-faces/Tarot-card-illustrations_04.png");
+    /* background-image: url("../images/card-faces/Tarot-card-illustrations_04.png"); */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */

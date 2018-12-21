@@ -56,39 +56,19 @@ for (i=0; i<3; i++) {
   
 };
 //-------------------------end 1.0 shuffle of array within this document-------------------------------
+
 //-------------------------begin 2.0 shuffle of cards.json to replace array above from 1.0-----------------------------
+
 //Get cards.json array into this document
 
-
-// var xmlhttp = new XMLHttpRequest();
-// xmlhttp.onreadystatechange = function() {
-//   if (this.readyState == 4 && this.status == 200) {
-//     var myObj = JSON.parse(this.responseText);
-//     document.getElementById("demo").innerHTML = myObj.name;
-//   }
-// };
-// xmlhttp.open("GET", "json_demo.txt", true);
-// xmlhttp.send();
-fetch('./cards.json').then(response => {
+fetch('./js/cards.json').then(response => {
         return response.json();
 }).then(data => {
-    console.log("working json fxn");
+    console.log("working json fxn in shuffleDeal.js");
     
 }).catch(err => {
-    console.log("broken json fxn")
+    console.log("broken json fxn in shuffleDeal.js")
 })
-
-// var request = new XMLHttpRequest();
-// request.open('GET', './cards.json', true);
-
-// request.onload = function () {
-//     var cards = JSON.parse(this.response);
-
-//     for (var i = 0; i < cards.length; i++){
-//         console.log(cards.tarot[i].name + " from JSON");
-//     }
-// }
-// request.send();
 
 //shuffle cards.json
 var random = shuffle(tarotImages);
